@@ -149,12 +149,21 @@ nav .nav-canvas{color:var(--sky-deep)}
 /* =========================================================
    CANVAS（青春ゾーン）
    ========================================================= */
-.canvas{position:relative;overflow:hidden;color:#fff;padding-block:clamp(90px,12vw,140px);
-  background:#1C3C55}
-.canvas-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
-.canvas::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,45,66,.55) 0%,rgba(18,45,66,.35) 45%,rgba(18,45,66,.72) 100%)}
+.canvas{position:relative;overflow:hidden;color:#fff;
+  padding-top:clamp(230px,30vw,430px);padding-bottom:clamp(90px,12vw,140px);
+  background:linear-gradient(180deg,#9FCBE6 0%,#6FA3C8 24%,#3E7099 58%,#24496A 100%)}
+/* 背景写真は上寄せ。下へ向かって空のグラデーションに溶かす */
+.canvas-bg{position:absolute;top:0;left:0;width:100%;height:clamp(520px,78vh,860px);
+  object-fit:cover;object-position:50% 26%;opacity:.95;filter:brightness(1.18) saturate(1.14) contrast(.97);
+  transform:scale(1.06) translateX(-4%);transform-origin:50% 40%;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 56%,rgba(0,0,0,.45) 80%,transparent 100%);
+          mask-image:linear-gradient(180deg,#000 0%,#000 56%,rgba(0,0,0,.45) 80%,transparent 100%)}
+.canvas::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,44,66,.12) 0%,rgba(16,44,66,.05) 30%,rgba(16,44,66,.10) 62%,rgba(16,44,66,.20) 100%)}
 .canvas>.wrap{position:relative;z-index:1}
-.cv-head{text-align:center;margin-bottom:60px;text-shadow:0 2px 20px rgba(10,30,45,.5)}
+.cv-head{position:relative;text-align:center;margin-bottom:60px;
+  text-shadow:0 2px 16px rgba(10,30,45,.6),0 1px 3px rgba(10,30,45,.4)}
+.cv-head::before{content:"";position:absolute;inset:-10% -10%;z-index:-1;pointer-events:none;
+  background:radial-gradient(62% 58% at 50% 46%,rgba(12,36,56,.42) 0%,rgba(12,36,56,.22) 45%,rgba(12,36,56,0) 75%)}
 .cv-kicker{font-family:var(--hand);font-size:17px;letter-spacing:.2em;opacity:.95}
 .cv-logo{font-family:var(--hand);font-weight:400;font-size:clamp(52px,10vw,110px);line-height:1.1;letter-spacing:.1em;margin:10px 0 6px}
 .cv-copy{font-family:var(--hand);font-size:clamp(20px,2.8vw,30px);margin:0;letter-spacing:.08em}
